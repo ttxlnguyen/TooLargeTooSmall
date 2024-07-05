@@ -14,18 +14,16 @@ public class Main {
     int randomNumber = random.nextInt(5) + 1; // generates random number between 0-4, +1 for bounds to include 1-5
     int guess = 0; // stores current guess to compare with randomNumber
 
-
     System.out.println("Guess a number between 1 and 5: ");
 
-    while (guess != randomNumber){
-
-        guess = input.nextInt();
-        if (guess > randomNumber) {
+    while (guess != randomNumber){ // initiates conditional for while loop
+        guess = input.nextInt(); // scans input
+        if (guess > randomNumber) { // if guess is less than randomly generated number
             System.out.println("Guess lower:");
-            guessCounter.add(guess);
+            guessCounter.add(guess); // adds guess to HashSet
         } else if (guess < randomNumber) {
             System.out.println("Guess higher:");
-            guessCounter.add(guess);
+            guessCounter.add(guess); // adds guess to HashSet
         } else {
             System.out.println("Congrats! " + guess + " is the number! You guessed " + guessCounter.size() + " times.");
             }
